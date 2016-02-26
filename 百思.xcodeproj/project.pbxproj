@@ -13,6 +13,10 @@
 		3872F5981C7FE2FF005F4060 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */; };
 		3872F5A41C7FE2FF005F4060 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F5A31C7FE2FF005F4060 /* __Tests.m */; };
 		3872F5AF1C7FE377005F4060 /* tabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F5AE1C7FE377005F4060 /* tabBarViewController.m */; };
+		3872F82C1C7FF92E005F4060 /* ZJEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F82B1C7FF92E005F4060 /* ZJEssenceViewController.m */; };
+		3872F82F1C7FF93E005F4060 /* ZJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F82E1C7FF93E005F4060 /* ZJNewViewController.m */; };
+		3872F8321C7FF94A005F4060 /* ZJFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F8311C7FF94A005F4060 /* ZJFriendViewController.m */; };
+		3872F8351C7FF959005F4060 /* ZJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F8341C7FF959005F4060 /* ZJMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,14 @@
 		3872F5A31C7FE2FF005F4060 /* __Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __Tests.m; sourceTree = "<group>"; };
 		3872F5AD1C7FE377005F4060 /* tabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabBarViewController.h; sourceTree = "<group>"; };
 		3872F5AE1C7FE377005F4060 /* tabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabBarViewController.m; sourceTree = "<group>"; };
+		3872F82A1C7FF92D005F4060 /* ZJEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJEssenceViewController.h; sourceTree = "<group>"; };
+		3872F82B1C7FF92E005F4060 /* ZJEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJEssenceViewController.m; sourceTree = "<group>"; };
+		3872F82D1C7FF93D005F4060 /* ZJNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNewViewController.h; sourceTree = "<group>"; };
+		3872F82E1C7FF93E005F4060 /* ZJNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJNewViewController.m; sourceTree = "<group>"; };
+		3872F8301C7FF94A005F4060 /* ZJFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJFriendViewController.h; sourceTree = "<group>"; };
+		3872F8311C7FF94A005F4060 /* ZJFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFriendViewController.m; sourceTree = "<group>"; };
+		3872F8331C7FF959005F4060 /* ZJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMeViewController.h; sourceTree = "<group>"; };
+		3872F8341C7FF959005F4060 /* ZJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +95,14 @@
 				3872F58C1C7FE2FF005F4060 /* AppDelegate.m */,
 				3872F5AD1C7FE377005F4060 /* tabBarViewController.h */,
 				3872F5AE1C7FE377005F4060 /* tabBarViewController.m */,
+				3872F82A1C7FF92D005F4060 /* ZJEssenceViewController.h */,
+				3872F82B1C7FF92E005F4060 /* ZJEssenceViewController.m */,
+				3872F82D1C7FF93D005F4060 /* ZJNewViewController.h */,
+				3872F82E1C7FF93E005F4060 /* ZJNewViewController.m */,
+				3872F8301C7FF94A005F4060 /* ZJFriendViewController.h */,
+				3872F8311C7FF94A005F4060 /* ZJFriendViewController.m */,
+				3872F8331C7FF959005F4060 /* ZJMeViewController.h */,
+				3872F8341C7FF959005F4060 /* ZJMeViewController.m */,
 				3872F5941C7FE2FF005F4060 /* Images.xcassets */,
 				3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */,
 				3872F5871C7FE2FE005F4060 /* Supporting Files */,
@@ -216,7 +236,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3872F58D1C7FE2FF005F4060 /* AppDelegate.m in Sources */,
+				3872F8351C7FF959005F4060 /* ZJMeViewController.m in Sources */,
+				3872F82C1C7FF92E005F4060 /* ZJEssenceViewController.m in Sources */,
+				3872F82F1C7FF93E005F4060 /* ZJNewViewController.m in Sources */,
 				3872F58A1C7FE2FE005F4060 /* main.m in Sources */,
+				3872F8321C7FF94A005F4060 /* ZJFriendViewController.m in Sources */,
 				3872F5AF1C7FE377005F4060 /* tabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +428,7 @@
 				3872F5A91C7FE2FF005F4060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3872F5AA1C7FE2FF005F4060 /* Build configuration list for PBXNativeTarget "百思Tests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +437,7 @@
 				3872F5AC1C7FE2FF005F4060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
