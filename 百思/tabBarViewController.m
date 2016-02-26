@@ -17,6 +17,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    /**
+     *  set all items' font and color attributes in UITabBarItem by using ***appeaercnce***.
+        UI_APPEARANCE_SELECTOR
+     */
+    // 通过appearance统一设置所有UITabBarItem的文字属性
+    // 后面带有UI_APPEARANCE_SELECTOR的方法, 都可以通过appearance对象来统一设置
+    
+    NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
+    attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
+    attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+    
+    NSMutableDictionary *attrsSelected = [NSMutableDictionary dictionary];
+    attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
+    attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+    
+    UITabBarItem *item = [UITabBarItem appearance];
+    [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
+    [item setTitleTextAttributes:attrsSelected forState:UIControlStateSelected];
+    
+    
+    
+    
 //    self.view.backgroundColor = [UIColor redColor];
     
     // add new controller
