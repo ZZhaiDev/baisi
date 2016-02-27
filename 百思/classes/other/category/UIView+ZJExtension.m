@@ -10,6 +10,23 @@
 
 @implementation UIView (ZJExtension)
 
+//**************** BE CAREFUL
+
+
+
+/**
+ *  self.messageView.frame.size.height = self.messageView.frame.size.height it is ********* WRONG *********
+ *  
+    This is right
+    CGRect temp = self.messageView.frame;
+        temp.size.height = temp.size.height + notesHeight;
+        self.messageView.frame = temp;
+ *      You are able to assign the frame, but not the fields of frame
+ */
+
+
+
+
 - (void)setWidth:(CGFloat)width
 {
     CGRect frame = self.frame;
@@ -36,6 +53,18 @@
     CGRect frame = self.frame;
     frame.origin.y = y;
     self.frame = frame;
+}
+
+- (void)setSize:(CGSize)size
+{
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+- (CGSize)size
+{
+    return self.frame.size;
 }
 
 - (CGFloat)width

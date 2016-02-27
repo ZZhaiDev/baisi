@@ -61,6 +61,8 @@
 
 - (void)setUpNewController:(UIViewController *)vc title:(NSString *)title image:(NSString  *)images seletedImage:(NSString *)selectedImage
 {
+    
+    vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:images];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
