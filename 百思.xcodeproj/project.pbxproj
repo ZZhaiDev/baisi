@@ -17,6 +17,8 @@
 		3872F82F1C7FF93E005F4060 /* ZJNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F82E1C7FF93E005F4060 /* ZJNewViewController.m */; };
 		3872F8321C7FF94A005F4060 /* ZJFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F8311C7FF94A005F4060 /* ZJFriendViewController.m */; };
 		3872F8351C7FF959005F4060 /* ZJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F8341C7FF959005F4060 /* ZJMeViewController.m */; };
+		38C21E471C81332A00B91819 /* ZJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E461C81332A00B91819 /* ZJTabBar.m */; };
+		38C21E4C1C815E3000B91819 /* UIView+ZJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E4B1C815E3000B91819 /* UIView+ZJExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,11 @@
 		3872F8311C7FF94A005F4060 /* ZJFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFriendViewController.m; sourceTree = "<group>"; };
 		3872F8331C7FF959005F4060 /* ZJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMeViewController.h; sourceTree = "<group>"; };
 		3872F8341C7FF959005F4060 /* ZJMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJMeViewController.m; sourceTree = "<group>"; };
+		38C21E451C81332A00B91819 /* ZJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTabBar.h; sourceTree = "<group>"; };
+		38C21E461C81332A00B91819 /* ZJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTabBar.m; sourceTree = "<group>"; };
+		38C21E481C814F2C00B91819 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		38C21E4A1C815E3000B91819 /* UIView+ZJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJExtension.h"; sourceTree = "<group>"; };
+		38C21E4B1C815E3000B91819 /* UIView+ZJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +100,6 @@
 			children = (
 				3872F58B1C7FE2FF005F4060 /* AppDelegate.h */,
 				3872F58C1C7FE2FF005F4060 /* AppDelegate.m */,
-				3872F5AD1C7FE377005F4060 /* tabBarViewController.h */,
-				3872F5AE1C7FE377005F4060 /* tabBarViewController.m */,
 				3872F82A1C7FF92D005F4060 /* ZJEssenceViewController.h */,
 				3872F82B1C7FF92E005F4060 /* ZJEssenceViewController.m */,
 				3872F82D1C7FF93D005F4060 /* ZJNewViewController.h */,
@@ -103,8 +108,13 @@
 				3872F8311C7FF94A005F4060 /* ZJFriendViewController.m */,
 				3872F8331C7FF959005F4060 /* ZJMeViewController.h */,
 				3872F8341C7FF959005F4060 /* ZJMeViewController.m */,
-				3872F5941C7FE2FF005F4060 /* Images.xcassets */,
-				3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */,
+				3872F5AD1C7FE377005F4060 /* tabBarViewController.h */,
+				3872F5AE1C7FE377005F4060 /* tabBarViewController.m */,
+				38C21E451C81332A00B91819 /* ZJTabBar.h */,
+				38C21E461C81332A00B91819 /* ZJTabBar.m */,
+				38C21E4A1C815E3000B91819 /* UIView+ZJExtension.h */,
+				38C21E4B1C815E3000B91819 /* UIView+ZJExtension.m */,
+				38C21E481C814F2C00B91819 /* PrefixHeader.pch */,
 				3872F5871C7FE2FE005F4060 /* Supporting Files */,
 			);
 			path = "百思";
@@ -113,6 +123,8 @@
 		3872F5871C7FE2FE005F4060 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */,
+				3872F5941C7FE2FF005F4060 /* Images.xcassets */,
 				3872F5881C7FE2FE005F4060 /* Info.plist */,
 				3872F5891C7FE2FE005F4060 /* main.m */,
 			);
@@ -240,6 +252,8 @@
 				3872F82C1C7FF92E005F4060 /* ZJEssenceViewController.m in Sources */,
 				3872F82F1C7FF93E005F4060 /* ZJNewViewController.m in Sources */,
 				3872F58A1C7FE2FE005F4060 /* main.m in Sources */,
+				38C21E4C1C815E3000B91819 /* UIView+ZJExtension.m in Sources */,
+				38C21E471C81332A00B91819 /* ZJTabBar.m in Sources */,
 				3872F8321C7FF94A005F4060 /* ZJFriendViewController.m in Sources */,
 				3872F5AF1C7FE377005F4060 /* tabBarViewController.m in Sources */,
 			);
@@ -359,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "百思/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -369,6 +384,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "百思/PrefixHeader.pch";
 				INFOPLIST_FILE = "百思/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

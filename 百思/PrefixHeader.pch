@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  百思
+//
+//  Created by zijia on 2/26/.
+//  Copyright (c) 2016 zijia. All rights reserved.
+//
+
+#ifndef ___PrefixHeader_pch
+#define ___PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIView+ZJExtension.h"
+
+#endif

@@ -11,6 +11,7 @@
 #import "ZJFriendViewController.h"
 #import "ZJMeViewController.h"
 #import "ZJNewViewController.h"
+#import "ZJTabBar.h"
 
 @interface tabBarViewController ()
 
@@ -42,48 +43,19 @@
     [item setTitleTextAttributes:attrsSelected forState:UIControlStateSelected];
     
     
-    
-    
-//    // add new controller
-//    UIViewController *vc1 = [[UIViewController alloc]init];
-//    vc1.tabBarItem.title = @"jinghua";
-//    vc1.tabBarItem.image = [UIImage imageNamed:@"tabBar_essence_icon"];
-//    vc1.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_essence_click_icon"];
-//    
-//  
-//    vc1.view.backgroundColor = [UIColor redColor];
-//    [self addChildViewController:vc1];
-//    
-//    
-//    
-//    
-//    // create viewController 2
-//    UIViewController *vc2 = [[UIViewController alloc]init];
-//    vc2.tabBarItem.title = @"新帖";
-//    vc2.tabBarItem.image = [UIImage imageNamed:@"tabBar_new_icon"];
-//    vc2.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_new_click_icon"];
-//    vc2.view.backgroundColor = [UIColor blackColor];
-//    [self addChildViewController:vc2];
-//    
-//    UIViewController *vc3 = [[UIViewController alloc]init];
-//    vc3.tabBarItem.title = @"关注";
-//    vc3.tabBarItem.image = [UIImage imageNamed:@"tabBar_friendTrends_icon"];
-//    vc3.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_friendTrends_click_icon"];
-//    vc3.view.backgroundColor = [UIColor grayColor];
-//    [self addChildViewController:vc3];
-//    
-//    
-//    UIViewController *vc4 = [[UIViewController alloc]init];
-//    vc4.tabBarItem.title = @"我";
-//    vc4.tabBarItem.image = [UIImage imageNamed:@"tabBar_me_icon"];
-//    vc4.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_me_click_icon"];
-//    vc4.view.backgroundColor = [UIColor blueColor];
-//    [self addChildViewController:vc4];
-    
     [self setUpNewController:[[ZJEssenceViewController alloc]init] title:@"精华" image:@"tabBar_essence_icon" seletedImage:@"tabBar_essence_click_icon"];
      [self setUpNewController:[[ZJNewViewController alloc]init] title:@"新帖" image:@"tabBar_new_icon" seletedImage:@"tabBar_new_click_icon"];
      [self setUpNewController:[[ZJFriendViewController alloc]init] title:@"关注" image:@"tabBar_friendTrends_icon" seletedImage:@"tabBar_friendTrends_click_icon"];
      [self setUpNewController:[[ZJMeViewController alloc]init] title:@"我" image:@"tabBar_me_icon" seletedImage:@"tabBar_me_click_icon"];
+    
+    /**
+     *  self.tabBar is read-only, so we can not just use: self.tabBar = [[ZJTabBar alloc] init];
+     *  but we can use KVC to assign value to _tabBar
+     *  @return
+     */
+    
+    
+    [self setValue:[[ZJTabBar alloc]init] forKey:@"tabBar"];
     
 }
 
@@ -92,8 +64,12 @@
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:images];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
-    vc.view.backgroundColor = [UIColor blueColor];
-    [self addChildViewController:vc];
+    vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
+    
+    UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:vc];
+    
+
+    [self addChildViewController:nvc];
 }
 
 
