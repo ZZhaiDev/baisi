@@ -41,7 +41,7 @@
     CGFloat buttonW = self.width/5;
     CGFloat buttonH = self.height;
     NSInteger index = 0;
-    // BUTTON IS KIND OF UICONTROL
+  
     for (UIView *button in self.subviews) {
      if (![button isKindOfClass:[UIControl class]] || button == self.publishButton) continue;
         

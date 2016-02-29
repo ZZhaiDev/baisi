@@ -7,6 +7,7 @@
 //
 
 #import "ZJFriendViewController.h"
+#import "ZJRecommaneViewController.h"
 
 @interface ZJFriendViewController ()
 
@@ -38,7 +39,8 @@
 
 - (void)button1Click
 {
-    ZJFunc;
+    ZJRecommaneViewController *vc  = [[ZJRecommaneViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
