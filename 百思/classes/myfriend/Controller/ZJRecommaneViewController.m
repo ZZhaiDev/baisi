@@ -68,7 +68,7 @@ static NSString *const ZJID = @"category";
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -79,10 +79,17 @@ static NSString *const ZJID = @"category";
 {
     ZJRecommandTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZJID];
     
+    if (cell == nil) {
+        cell = [[ZJRecommandTableViewCell alloc] init]; // or your custom initialization
+    }
+    
     cell.category = self.leftCategories[indexPath.row];
+   
     
     return cell;
 }
+
+//- (UITableViewCell *)t
 
 
 

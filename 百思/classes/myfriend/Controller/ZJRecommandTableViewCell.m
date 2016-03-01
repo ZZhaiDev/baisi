@@ -19,6 +19,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    
+    self.backgroundColor = ZJColor(244, 244, 244);
 }
 
 - (void)setCategory:(ZJRecommandCategories *)category
