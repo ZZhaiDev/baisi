@@ -10,9 +10,12 @@
 		3872F5951C7FE2FF005F4060 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3872F5941C7FE2FF005F4060 /* Images.xcassets */; };
 		3872F5981C7FE2FF005F4060 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */; };
 		3872F5A41C7FE2FF005F4060 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F5A31C7FE2FF005F4060 /* __Tests.m */; };
+		38946D971C863F3200CAB9DD /* ZJRecommaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946D951C863F3200CAB9DD /* ZJRecommaneViewController.m */; };
+		38946D981C863F3200CAB9DD /* ZJRecommaneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38946D961C863F3200CAB9DD /* ZJRecommaneViewController.xib */; };
+		38946D9F1C8640B500CAB9DD /* ZJRecommandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946D9D1C8640B500CAB9DD /* ZJRecommandTableViewCell.m */; };
+		38946DA01C8640B500CAB9DD /* ZJRecommandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38946D9E1C8640B500CAB9DD /* ZJRecommandTableViewCell.xib */; };
+		38946DA31C8640D300CAB9DD /* ZJRecommandCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946DA21C8640D300CAB9DD /* ZJRecommandCategories.m */; };
 		389DCDA21C84F09A00372E1B /* ZJFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389DCDA11C84F09A00372E1B /* ZJFriendViewController.xib */; };
-		389DCDA61C84F20D00372E1B /* ZJRecommaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 389DCDA41C84F20D00372E1B /* ZJRecommaneViewController.m */; };
-		389DCDA71C84F20D00372E1B /* ZJRecommaneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389DCDA51C84F20D00372E1B /* ZJRecommaneViewController.xib */; };
 		38C21E7A1C818F0600B91819 /* ZJEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E541C818F0600B91819 /* ZJEssenceViewController.m */; };
 		38C21E7B1C818F0600B91819 /* ZJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E5A1C818F0600B91819 /* ZJMeViewController.m */; };
 		38C21E7C1C818F0600B91819 /* ZJFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E601C818F0600B91819 /* ZJFriendViewController.m */; };
@@ -44,10 +47,15 @@
 		3872F59D1C7FE2FF005F4060 /* 百思Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "百思Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3872F5A21C7FE2FF005F4060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3872F5A31C7FE2FF005F4060 /* __Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __Tests.m; sourceTree = "<group>"; };
+		38946D941C863F3200CAB9DD /* ZJRecommaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJRecommaneViewController.h; sourceTree = "<group>"; };
+		38946D951C863F3200CAB9DD /* ZJRecommaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJRecommaneViewController.m; sourceTree = "<group>"; };
+		38946D961C863F3200CAB9DD /* ZJRecommaneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJRecommaneViewController.xib; sourceTree = "<group>"; };
+		38946D9C1C8640B500CAB9DD /* ZJRecommandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJRecommandTableViewCell.h; path = "百思/classes/myfriend/Controller/ZJRecommandTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		38946D9D1C8640B500CAB9DD /* ZJRecommandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJRecommandTableViewCell.m; path = "百思/classes/myfriend/Controller/ZJRecommandTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		38946D9E1C8640B500CAB9DD /* ZJRecommandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZJRecommandTableViewCell.xib; path = "百思/classes/myfriend/Controller/ZJRecommandTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		38946DA11C8640D300CAB9DD /* ZJRecommandCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJRecommandCategories.h; path = "百思/classes/myfriend/Controller/ZJRecommandCategories.h"; sourceTree = SOURCE_ROOT; };
+		38946DA21C8640D300CAB9DD /* ZJRecommandCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJRecommandCategories.m; path = "百思/classes/myfriend/Controller/ZJRecommandCategories.m"; sourceTree = SOURCE_ROOT; };
 		389DCDA11C84F09A00372E1B /* ZJFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJFriendViewController.xib; sourceTree = "<group>"; };
-		389DCDA31C84F20D00372E1B /* ZJRecommaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJRecommaneViewController.h; sourceTree = "<group>"; };
-		389DCDA41C84F20D00372E1B /* ZJRecommaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJRecommaneViewController.m; sourceTree = "<group>"; };
-		389DCDA51C84F20D00372E1B /* ZJRecommaneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJRecommaneViewController.xib; sourceTree = "<group>"; };
 		38C21E531C818F0600B91819 /* ZJEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJEssenceViewController.h; sourceTree = "<group>"; };
 		38C21E541C818F0600B91819 /* ZJEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJEssenceViewController.m; sourceTree = "<group>"; };
 		38C21E591C818F0600B91819 /* ZJMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJMeViewController.h; sourceTree = "<group>"; };
@@ -242,9 +250,9 @@
 				38C21E5F1C818F0600B91819 /* ZJFriendViewController.h */,
 				38C21E601C818F0600B91819 /* ZJFriendViewController.m */,
 				389DCDA11C84F09A00372E1B /* ZJFriendViewController.xib */,
-				389DCDA31C84F20D00372E1B /* ZJRecommaneViewController.h */,
-				389DCDA41C84F20D00372E1B /* ZJRecommaneViewController.m */,
-				389DCDA51C84F20D00372E1B /* ZJRecommaneViewController.xib */,
+				38946D941C863F3200CAB9DD /* ZJRecommaneViewController.h */,
+				38946D951C863F3200CAB9DD /* ZJRecommaneViewController.m */,
+				38946D961C863F3200CAB9DD /* ZJRecommaneViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +260,8 @@
 		38C21E611C818F0600B91819 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				38946DA11C8640D300CAB9DD /* ZJRecommandCategories.h */,
+				38946DA21C8640D300CAB9DD /* ZJRecommandCategories.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -259,6 +269,9 @@
 		38C21E621C818F0600B91819 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				38946D9C1C8640B500CAB9DD /* ZJRecommandTableViewCell.h */,
+				38946D9D1C8640B500CAB9DD /* ZJRecommandTableViewCell.m */,
+				38946D9E1C8640B500CAB9DD /* ZJRecommandTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -447,9 +460,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				389DCDA71C84F20D00372E1B /* ZJRecommaneViewController.xib in Resources */,
+				38946D981C863F3200CAB9DD /* ZJRecommaneViewController.xib in Resources */,
 				3872F5981C7FE2FF005F4060 /* LaunchScreen.xib in Resources */,
 				389DCDA21C84F09A00372E1B /* ZJFriendViewController.xib in Resources */,
+				38946DA01C8640B500CAB9DD /* ZJRecommandTableViewCell.xib in Resources */,
 				3872F5951C7FE2FF005F4060 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,7 +531,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C21E7B1C818F0600B91819 /* ZJMeViewController.m in Sources */,
-				389DCDA61C84F20D00372E1B /* ZJRecommaneViewController.m in Sources */,
+				38946D971C863F3200CAB9DD /* ZJRecommaneViewController.m in Sources */,
+				38946DA31C8640D300CAB9DD /* ZJRecommandCategories.m in Sources */,
 				38C21E7F1C818F0600B91819 /* UIBarButtonItem+barButtonItemExtension.m in Sources */,
 				38C21E7D1C818F0600B91819 /* ZJNewViewController.m in Sources */,
 				38C21E7C1C818F0600B91819 /* ZJFriendViewController.m in Sources */,
@@ -526,6 +541,7 @@
 				38C21E7E1C818F0600B91819 /* AppDelegate.m in Sources */,
 				38C21E821C818F0600B91819 /* main.m in Sources */,
 				38C21E801C818F0600B91819 /* UIView+ZJExtension.m in Sources */,
+				38946D9F1C8640B500CAB9DD /* ZJRecommandTableViewCell.m in Sources */,
 				38C21E831C818F0600B91819 /* ZJTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

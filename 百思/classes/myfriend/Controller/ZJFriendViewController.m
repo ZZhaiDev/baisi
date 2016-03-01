@@ -21,6 +21,7 @@
     //friendsRecommentIcon
     
     self.navigationItem.title = @"My Friends";
+ 
     
 //    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [button1 setBackgroundImage:[UIImage imageNamed:@"friendsRecommentIcon"] forState:UIControlStateNormal];

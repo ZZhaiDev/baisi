@@ -1,4 +1,6 @@
-platform:ios, '7.0'    
-pod 'AFNetworking', '~> 2.1.0'  
-pod 'JSONKit-NoWarning', '~> 1.1'  
-pod 'MBProgressHUD', '~> 0.8'
+platform :ios, "8.0"
+
+pod "AFNetworking", '~> 2.1.0'
+pod "SDWebImage"
+pod "SVProgressHUD"
+pod "MJExtension"
