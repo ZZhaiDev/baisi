@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZJRecommaneViewController">
             <connections>
                 <outlet property="leftTableView" destination="LWW-ec-gvm" id="ecn-c1-s2g"/>
+                <outlet property="rightTableView" destination="qzm-nb-VnK" id="drn-U3-zyp"/>
                 <outlet property="view" destination="uM9-kz-1Lp" id="5ki-9D-zpy"/>
             </connections>
         </placeholder>
@@ -24,6 +25,13 @@
                     <connections>
                         <outlet property="dataSource" destination="-1" id="wwg-fo-sjk"/>
                         <outlet property="delegate" destination="-1" id="rAB-eW-Xc1"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qzm-nb-VnK" userLabel="右侧">
+                    <rect key="frame" x="70" y="0.0" width="530" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mqo-p4-0Ze"/>
                     </connections>
                 </tableView>
             </subviews>

@@ -15,6 +15,9 @@
 		38946D9F1C8640B500CAB9DD /* ZJRecommandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946D9D1C8640B500CAB9DD /* ZJRecommandTableViewCell.m */; };
 		38946DA01C8640B500CAB9DD /* ZJRecommandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38946D9E1C8640B500CAB9DD /* ZJRecommandTableViewCell.xib */; };
 		38946DA31C8640D300CAB9DD /* ZJRecommandCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946DA21C8640D300CAB9DD /* ZJRecommandCategories.m */; };
+		38946DA81C86938000CAB9DD /* ZJRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946DA71C86938000CAB9DD /* ZJRight.m */; };
+		38946DAC1C8693CA00CAB9DD /* ZJRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946DAA1C8693CA00CAB9DD /* ZJRightTableViewCell.m */; };
+		38946DAD1C8693CA00CAB9DD /* ZJRightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38946DAB1C8693CA00CAB9DD /* ZJRightTableViewCell.xib */; };
 		389DCDA21C84F09A00372E1B /* ZJFriendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389DCDA11C84F09A00372E1B /* ZJFriendViewController.xib */; };
 		38C21E7A1C818F0600B91819 /* ZJEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E541C818F0600B91819 /* ZJEssenceViewController.m */; };
 		38C21E7B1C818F0600B91819 /* ZJMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E5A1C818F0600B91819 /* ZJMeViewController.m */; };
@@ -55,6 +58,11 @@
 		38946D9E1C8640B500CAB9DD /* ZJRecommandTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZJRecommandTableViewCell.xib; path = "百思/classes/myfriend/Controller/ZJRecommandTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		38946DA11C8640D300CAB9DD /* ZJRecommandCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJRecommandCategories.h; path = "百思/classes/myfriend/Controller/ZJRecommandCategories.h"; sourceTree = SOURCE_ROOT; };
 		38946DA21C8640D300CAB9DD /* ZJRecommandCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJRecommandCategories.m; path = "百思/classes/myfriend/Controller/ZJRecommandCategories.m"; sourceTree = SOURCE_ROOT; };
+		38946DA61C86938000CAB9DD /* ZJRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJRight.h; path = "百思/classes/myfriend/Controller/ZJRight.h"; sourceTree = SOURCE_ROOT; };
+		38946DA71C86938000CAB9DD /* ZJRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJRight.m; path = "百思/classes/myfriend/Controller/ZJRight.m"; sourceTree = SOURCE_ROOT; };
+		38946DA91C8693CA00CAB9DD /* ZJRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZJRightTableViewCell.h; path = "百思/classes/myfriend/Controller/ZJRightTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		38946DAA1C8693CA00CAB9DD /* ZJRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZJRightTableViewCell.m; path = "百思/classes/myfriend/Controller/ZJRightTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		38946DAB1C8693CA00CAB9DD /* ZJRightTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZJRightTableViewCell.xib; path = "百思/classes/myfriend/Controller/ZJRightTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		389DCDA11C84F09A00372E1B /* ZJFriendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJFriendViewController.xib; sourceTree = "<group>"; };
 		38C21E531C818F0600B91819 /* ZJEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJEssenceViewController.h; sourceTree = "<group>"; };
 		38C21E541C818F0600B91819 /* ZJEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJEssenceViewController.m; sourceTree = "<group>"; };
@@ -262,6 +270,8 @@
 			children = (
 				38946DA11C8640D300CAB9DD /* ZJRecommandCategories.h */,
 				38946DA21C8640D300CAB9DD /* ZJRecommandCategories.m */,
+				38946DA61C86938000CAB9DD /* ZJRight.h */,
+				38946DA71C86938000CAB9DD /* ZJRight.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -272,6 +282,9 @@
 				38946D9C1C8640B500CAB9DD /* ZJRecommandTableViewCell.h */,
 				38946D9D1C8640B500CAB9DD /* ZJRecommandTableViewCell.m */,
 				38946D9E1C8640B500CAB9DD /* ZJRecommandTableViewCell.xib */,
+				38946DA91C8693CA00CAB9DD /* ZJRightTableViewCell.h */,
+				38946DAA1C8693CA00CAB9DD /* ZJRightTableViewCell.m */,
+				38946DAB1C8693CA00CAB9DD /* ZJRightTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -464,6 +477,7 @@
 				3872F5981C7FE2FF005F4060 /* LaunchScreen.xib in Resources */,
 				389DCDA21C84F09A00372E1B /* ZJFriendViewController.xib in Resources */,
 				38946DA01C8640B500CAB9DD /* ZJRecommandTableViewCell.xib in Resources */,
+				38946DAD1C8693CA00CAB9DD /* ZJRightTableViewCell.xib in Resources */,
 				3872F5951C7FE2FF005F4060 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38C21E7B1C818F0600B91819 /* ZJMeViewController.m in Sources */,
+				38946DAC1C8693CA00CAB9DD /* ZJRightTableViewCell.m in Sources */,
 				38946D971C863F3200CAB9DD /* ZJRecommaneViewController.m in Sources */,
 				38946DA31C8640D300CAB9DD /* ZJRecommandCategories.m in Sources */,
 				38C21E7F1C818F0600B91819 /* UIBarButtonItem+barButtonItemExtension.m in Sources */,
@@ -538,6 +553,7 @@
 				38C21E7C1C818F0600B91819 /* ZJFriendViewController.m in Sources */,
 				38C21E811C818F0600B91819 /* tabBarViewController.m in Sources */,
 				38C21E7A1C818F0600B91819 /* ZJEssenceViewController.m in Sources */,
+				38946DA81C86938000CAB9DD /* ZJRight.m in Sources */,
 				38C21E7E1C818F0600B91819 /* AppDelegate.m in Sources */,
 				38C21E821C818F0600B91819 /* main.m in Sources */,
 				38C21E801C818F0600B91819 /* UIView+ZJExtension.m in Sources */,
