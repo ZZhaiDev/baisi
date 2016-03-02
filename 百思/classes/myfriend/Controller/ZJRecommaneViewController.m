@@ -28,17 +28,19 @@ static NSString *const ZJID = @"category";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-       self.view.backgroundColor = [UIColor clearColor];
+    [self.leftTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZJRecommandTableViewCell class]) bundle:nil] forCellReuseIdentifier:ZJID ];
+    
+//     self.leftTableView.backgroundColor = [UIColor redColor];
     
     self.navigationItem.title = @"--welcome--";
-//    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"category";
     params[@"c"] = @"subscribe";
     
     [[AFHTTPRequestOperationManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        [SVProgressHUD dismiss];
+        [SVProgressHUD dismiss];
         
         ZJLog(@"%@",responseObject);
         
@@ -52,7 +54,7 @@ static NSString *const ZJID = @"category";
         
         
         
-        self.leftTableView.backgroundColor = [UIColor whiteColor];
+//        self.leftTableView.backgroundColor = [UIColor whiteColor];
         [self.leftTableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -85,6 +87,8 @@ static NSString *const ZJID = @"category";
     
     cell.category = self.leftCategories[indexPath.row];
    
+    
+//    ZJLog(@"adfaf");
     
     return cell;
 }

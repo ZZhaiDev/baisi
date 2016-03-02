@@ -22,6 +22,7 @@
 #define ZJLog(...) NSLog(__VA_ARGS__)
 #else
 #define ZJLog(...)
+
 #endif
 
 #define ZJFunc ZJLog(@"%s", __func__)

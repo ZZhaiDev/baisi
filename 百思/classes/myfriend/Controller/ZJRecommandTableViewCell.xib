@@ -9,20 +9,21 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="category" id="sBz-21-sbQ" customClass="ZJRecommandTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBz-21-sbQ" id="tP6-Nt-gri">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" tableViewCell="sBz-21-sbQ" id="tP6-Nt-gri">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IY4-gQ-ICc" userLabel="底部的分割线">
                         <rect key="frame" x="0.0" y="42" width="320" height="1"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Lrn-4o-axN"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-aS-nSW" userLabel="选中时显示的控件">
-                        <rect key="frame" x="0.0" y="0.0" width="5" height="42"/>
-                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-aS-nSW" userLabel="选中时显示的控件">
+                        <rect key="frame" x="0.0" y="0.0" width="15" height="42"/>
+                        <color key="backgroundColor" red="0.64304408983180616" green="0.65911063759999999" blue="0.17183025778764488" alpha="0.88" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="5" id="hXY-kT-gE1"/>
                         </constraints>
@@ -38,8 +39,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="selectedCell" destination="5ej-aS-nSW" id="i98-hW-S8d"/>
-                <outlet property="selectedIndicator" destination="5ej-aS-nSW" id="5o7-WW-W7y"/>
+                <outlet property="selectedCell" destination="5ej-aS-nSW" id="jSs-OZ-1WF"/>
             </connections>
             <point key="canvasLocation" x="311" y="210"/>
         </tableViewCell>
