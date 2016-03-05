@@ -33,6 +33,7 @@ static NSString *const ZJRID = @"user";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.rightTableView.rowHeight = 65;
     
     [self.leftTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZJRecommandTableViewCell class]) bundle:nil] forCellReuseIdentifier:ZJID ];
       [self.rightTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZJRightTableViewCell class]) bundle:nil] forCellReuseIdentifier:ZJRID ];
@@ -49,10 +50,10 @@ static NSString *const ZJRID = @"user";
     [[AFHTTPRequestOperationManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [SVProgressHUD dismiss];
         
-        ZJLog(@"%@",responseObject);
+//        ZJLog(@"%@",responseObject);
         
         self.leftCategories = [ZJRecommandCategories objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        
+
         
 //        self.leftTableView.backgroundColor = [UIColor whiteColor];
         [self.leftTableView reloadData];
@@ -68,16 +69,18 @@ static NSString *const ZJRID = @"user";
 
 #pragma mark -- <UITableViewDataSource>
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+//{
+//    return 1;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == self.leftTableView) {
         return self.leftCategories.count;
     }else{
-        return self.rightCategories.count;
+        
+        ZJRecommandCategories *c = self.leftCategories[self.leftTableView.indexPathForSelectedRow.row];
+        return c.users.count;
     }
 }
 
@@ -86,17 +89,18 @@ static NSString *const ZJRID = @"user";
     if (tableView == self.leftTableView) {
         ZJRecommandTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZJID];
         cell.category = self.leftCategories[indexPath.row];
-        ZJLog(@"111111111111110000");
+      
         return cell;
        
     }else
     {
-        ZJLog(@"11111111111111");
+    
         ZJRightTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ZJRID];
-        ZJLog(@"11111111111111w");
+     
+        ZJRecommandCategories *c = self.leftCategories[self.leftTableView.indexPathForSelectedRow.row];
+        cell.user = c.users[indexPath.row];
+
       
-        cell.user = self.rightCategories[indexPath.row];
-        ZJLog(@"11111111111111e");
         return cell;
     }
     
@@ -106,25 +110,43 @@ static NSString *const ZJRID = @"user";
 
 #pragma mark -- <UITableViewDelegate>
 
+//UITableViewDelegate: will call this function when select one cell.
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // save the all the right side table data into nsmutablearray Users. if c.users.count means there is data before, so just load the data, do not have to send GET into serve. If c.users.count == nil, send GET to server.
+    
+    // will not repeat send GET into server
+    
     ZJRecommandCategories *c = self.leftCategories[indexPath.row];
-    // 发送请求给服务器, 加载右侧的数据
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
-    params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(c.id);
-    ZJLog(@"1111111111111133333");
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        self.rightCategories = [ZJRight objectArrayWithKeyValuesArray:responseObject[@"list"]];
+    if (c.users.count) {
         [self.rightTableView reloadData];
-        ZJLog(@"11111111111111444444");
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        ZJLog(@"%@", error);
+    }else{
         
-//        ZJLog(@"11111111111111");
-    }];
+        // will relooad the data before send message to server, which means before show the new data, dismiss the old data.
+        
+        [self.rightTableView reloadData];
+
+        // 发送请求给服务器, 加载右侧的数据
+        NSMutableDictionary *params = [NSMutableDictionary dictionary];
+        params[@"a"] = @"list";
+        params[@"c"] = @"subscribe";
+        params[@"category_id"] = @(c.id);
+       
+        [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+            NSArray *data  = [ZJRight objectArrayWithKeyValuesArray:responseObject[@"list"]];
+            [c.users addObjectsFromArray:data];
+            
+            
+            [self.rightTableView reloadData];
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            ZJLog(@"%@", error);
+       
+        }];
+        
+    }
+  
     
     
 }

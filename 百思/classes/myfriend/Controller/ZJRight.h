@@ -17,4 +17,8 @@
 /** 昵称 */
 @property (nonatomic, copy) NSString *screen_name;
 
+
+
+
+
 @end

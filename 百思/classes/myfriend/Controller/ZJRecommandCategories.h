@@ -17,4 +17,10 @@
 /** 名字 */
 @property (nonatomic, copy) NSString *name;
 
+/**
+ *  all the data
+ */
+
+@property (nonatomic, strong) NSMutableArray *users;
+
 @end
