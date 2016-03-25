@@ -56,7 +56,7 @@
     
     
     [self setValue:[[ZJTabBar alloc]init] forKey:@"tabBar"];
-    
+
 }
 
 - (void)setUpNewController:(UIViewController *)vc title:(NSString *)title image:(NSString  *)images seletedImage:(NSString *)selectedImage

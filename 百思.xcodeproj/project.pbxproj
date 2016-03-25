@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3872F5951C7FE2FF005F4060 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3872F5941C7FE2FF005F4060 /* Images.xcassets */; };
 		3872F5981C7FE2FF005F4060 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */; };
 		3872F5A41C7FE2FF005F4060 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F5A31C7FE2FF005F4060 /* __Tests.m */; };
 		38946D971C863F3200CAB9DD /* ZJRecommaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946D951C863F3200CAB9DD /* ZJRecommaneViewController.m */; };
@@ -29,6 +28,7 @@
 		38C21E811C818F0600B91819 /* tabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E731C818F0600B91819 /* tabBarViewController.m */; };
 		38C21E821C818F0600B91819 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E741C818F0600B91819 /* main.m */; };
 		38C21E831C818F0600B91819 /* ZJTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C21E791C818F0600B91819 /* ZJTabBar.m */; };
+		38EED2B71CA3A17700B43453 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38EED2B61CA3A17700B43453 /* Images.xcassets */; };
 		C220A5E76D97BF35F42A826D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E964E5D37ADD96AB56E4334B /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,6 @@
 /* Begin PBXFileReference section */
 		3872F5841C7FE2FE005F4060 /* 百思.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3872F5881C7FE2FE005F4060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3872F5941C7FE2FF005F4060 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3872F5971C7FE2FF005F4060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3872F59D1C7FE2FF005F4060 /* 百思Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "百思Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3872F5A21C7FE2FF005F4060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		38C21E761C818F0600B91819 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		38C21E781C818F0600B91819 /* ZJTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTabBar.h; sourceTree = "<group>"; };
 		38C21E791C818F0600B91819 /* ZJTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTabBar.m; sourceTree = "<group>"; };
+		38EED2B61CA3A17700B43453 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "../../0723/代码/05-百思不得姐-推荐标签/01-百思不得姐/Images.xcassets"; sourceTree = "<group>"; };
 		7A6720C03D95721F41AB2AEA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		AFCC7254154D664E864E98D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E964E5D37ADD96AB56E4334B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,8 +140,8 @@
 		3872F5871C7FE2FE005F4060 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				38EED2B61CA3A17700B43453 /* Images.xcassets */,
 				3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */,
-				3872F5941C7FE2FF005F4060 /* Images.xcassets */,
 				3872F5881C7FE2FE005F4060 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -476,9 +476,9 @@
 				38946D981C863F3200CAB9DD /* ZJRecommaneViewController.xib in Resources */,
 				3872F5981C7FE2FF005F4060 /* LaunchScreen.xib in Resources */,
 				389DCDA21C84F09A00372E1B /* ZJFriendViewController.xib in Resources */,
+				38EED2B71CA3A17700B43453 /* Images.xcassets in Resources */,
 				38946DA01C8640B500CAB9DD /* ZJRecommandTableViewCell.xib in Resources */,
 				38946DAD1C8693CA00CAB9DD /* ZJRightTableViewCell.xib in Resources */,
-				3872F5951C7FE2FF005F4060 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
