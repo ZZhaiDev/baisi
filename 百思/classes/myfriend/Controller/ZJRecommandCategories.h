@@ -28,10 +28,10 @@
 /**
  *  总数
  */
-@property (nonatomic, assign) NSInteger *total;
+@property (nonatomic, assign) NSInteger total;
 /**
  *  当前的页码
  */
-@property (nonatomic, assign) NSInteger *currentPage;
+@property (nonatomic, assign) NSInteger currentPage;
 
 @end
