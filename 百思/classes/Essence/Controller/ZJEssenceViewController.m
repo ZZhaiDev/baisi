@@ -6,6 +6,7 @@
 //  Copyright (c) 2016 zijia. All rights reserved.
 //
 
+#import "ZZJRecommandTableViewController.h"
 #import "ZJEssenceViewController.h"
 
 @interface ZJEssenceViewController ()
@@ -17,9 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = @"main page";
     
      self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highImage:@"MainTagSubIconClick" taget:self action:@selector(button1Click)];
+    
+    self.view.backgroundColor = ZJBGColor;
     
     
 }
@@ -30,7 +33,9 @@
 
 - (void)button1Click
 {
-    ZJFunc;
+    ZZJRecommandTableViewController *vc = [[ZZJRecommandTableViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
