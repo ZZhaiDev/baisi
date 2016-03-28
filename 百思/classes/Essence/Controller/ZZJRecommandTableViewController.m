@@ -27,26 +27,38 @@ static NSString *const ZJTagID = @"tag";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUp];
+    
+    [self sendRequest];
+    
+}
+- (void)setUp
+{
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    
     self.tableView.rowHeight = 80;
     
     self.title = @"推荐标签";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZJRecommandTagCellTableViewCell class]) bundle:nil] forCellReuseIdentifier:ZJTagID];
-    
+}
+
+- (void)sendRequest
+{
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"tag_recommend";
     params[@"action"] = @"sub";
     params[@"c"] = @"topic";
     
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        [SVProgressHUD dismiss];
         
-        self.tags = [ZJRecommendTag objectArrayWithKeyValuesArray:responseObject];
+        self.tags = [ZJRecommendTag mj_objectArrayWithKeyValuesArray:responseObject];
         
         [self.tableView reloadData];
-//        NSLog(@"%@", responseObject);
+        //        NSLog(@"%@", responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [SVProgressHUD showErrorWithStatus:@"loading fail"];
     }];
-    
 }
 
 #pragma mark - Table view data source
