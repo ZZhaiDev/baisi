@@ -13,6 +13,7 @@
 
 //标签栏底部的红色指示器  the red indicator on the buttom of view
 @property (nonatomic, strong) UIView *indicatorView;
+@property (nonatomic, strong) UIButton *GButton;
 
 @end
 
@@ -47,6 +48,17 @@
     [self.view addSubview:titleView];
 
     
+    
+    // 底部的红色指示器 the red indicator on the buttom
+    UIView *indicator = [[UIView alloc]init];
+    indicator.backgroundColor = [UIColor redColor];
+    indicator.height = 2;
+    indicator.y = titleView.height - indicator.height;
+    
+    [titleView addSubview:indicator];
+    self.indicatorView = indicator;
+    
+    
     // 内部的子标签
     NSArray *titles = @[@"全部", @"视频", @"声音", @"图片", @"段子"];
     
@@ -65,24 +77,35 @@
         [button addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [titleView addSubview:button];
+        
+        // 默认选中点击第一个按钮  the first button is selected default
+        
+        if(i == 0)
+        {
+            button.selected = YES;
+            self.GButton = button;
+            
+            //让按钮内部的label根据文字内容来计算， 如果没有这一句话， 第一个默认点击的按钮下边的指示器不会出现。
+            
+            [button.titleLabel sizeToFit];
+            indicator.width = button.titleLabel.width;
+            indicator.centerX = button.centerX;
+        }
     }
     
-    // 底部的红色指示器 the red indicator on the buttom
-    UIView *indicator = [[UIView alloc]init];
-    indicator.backgroundColor = [UIColor redColor];
-    indicator.height = 2;
-    indicator.y = titleView.height - indicator.height;
-    
-    [titleView addSubview:indicator];
-    self.indicatorView = indicator;
     
 }
 
 - (void)titleClick: (UIButton *)button
 {
-    
-    self.indicatorView.width = button.titleLabel.width;
-    self.indicatorView.centerX = button.centerX;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.GButton.selected = NO;
+        
+        self.indicatorView.width = button.titleLabel.width;
+        self.indicatorView.centerX = button.centerX;
+        button.selected = YES;
+        self.GButton = button;
+    }];
 }
 
 
