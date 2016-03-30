@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[UITabBar appearance] setBackgroundColor:ZJBGColor];
+    
     
     /**
      *  set all items' font and color attributes in UITabBarItem by using ***appeaercnce***.
@@ -61,7 +63,8 @@
 
 - (void)setUpNewController:(UIViewController *)vc title:(NSString *)title image:(NSString  *)images seletedImage:(NSString *)selectedImage
 {
-    
+
+//      self.tabBar.backgroundColor = [UIColor grayColor];
     vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:images];
@@ -69,7 +72,7 @@
     vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(100)/100.0 green:arc4random_uniform(100)/100.0 blue:arc4random_uniform(100)/100.0 alpha:1.0];
     
     UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:vc];
-    
+
 
     [self addChildViewController:nvc];
 }
