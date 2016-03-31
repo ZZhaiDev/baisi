@@ -13,6 +13,7 @@
 		3818FCEB1CA85EA700CECD4A /* ZJRecommandTagCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3818FCE91CA85EA700CECD4A /* ZJRecommandTagCellTableViewCell.xib */; };
 		383BF7F91CAC13F700CD8CAF /* ZJFiveTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 383BF7F81CAC13F700CD8CAF /* ZJFiveTableViewController.m */; };
 		3849F6DB1CACC587007D2578 /* fiveTableModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3849F6DA1CACC587007D2578 /* fiveTableModel.m */; };
+		3849F6E01CACDB22007D2578 /* ZJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 3849F6DF1CACDB22007D2578 /* ZJConst.m */; };
 		3872F5981C7FE2FF005F4060 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3872F5961C7FE2FF005F4060 /* LaunchScreen.xib */; };
 		3872F5A41C7FE2FF005F4060 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3872F5A31C7FE2FF005F4060 /* __Tests.m */; };
 		38946D971C863F3200CAB9DD /* ZJRecommaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38946D951C863F3200CAB9DD /* ZJRecommaneViewController.m */; };
@@ -60,6 +61,8 @@
 		383BF7F81CAC13F700CD8CAF /* ZJFiveTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFiveTableViewController.m; sourceTree = "<group>"; };
 		3849F6D91CACC587007D2578 /* fiveTableModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fiveTableModel.h; sourceTree = SOURCE_ROOT; };
 		3849F6DA1CACC587007D2578 /* fiveTableModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fiveTableModel.m; sourceTree = SOURCE_ROOT; };
+		3849F6DE1CACDB22007D2578 /* ZJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJConst.h; sourceTree = "<group>"; };
+		3849F6DF1CACDB22007D2578 /* ZJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJConst.m; sourceTree = "<group>"; };
 		3872F5841C7FE2FE005F4060 /* 百思.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3872F5881C7FE2FE005F4060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3872F5971C7FE2FF005F4060 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -361,6 +364,8 @@
 				38C21E6B1C818F0600B91819 /* AppDelegate.m */,
 				38C21E741C818F0600B91819 /* main.m */,
 				38C21E761C818F0600B91819 /* PrefixHeader.pch */,
+				3849F6DE1CACDB22007D2578 /* ZJConst.h */,
+				3849F6DF1CACDB22007D2578 /* ZJConst.m */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -588,6 +593,7 @@
 				3818FCEA1CA85EA700CECD4A /* ZJRecommandTagCellTableViewCell.m in Sources */,
 				38C21E7E1C818F0600B91819 /* AppDelegate.m in Sources */,
 				38C21E821C818F0600B91819 /* main.m in Sources */,
+				3849F6E01CACDB22007D2578 /* ZJConst.m in Sources */,
 				38C21E801C818F0600B91819 /* UIView+ZJExtension.m in Sources */,
 				38946D9F1C8640B500CAB9DD /* ZJRecommandTableViewCell.m in Sources */,
 				3818FCE61CA85BB200CECD4A /* ZJRecommendTag.m in Sources */,

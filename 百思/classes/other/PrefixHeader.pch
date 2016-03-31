@@ -14,6 +14,7 @@
 
 #import "UIView+ZJExtension.h"
 #import "UIBarButtonItem+barButtonItemExtension.h"
+#import "ZJConst.h"
 //#import <AFNetworking/AFNetworking.h>
 //#import <JSONKit-NoWarning/JSONKit.h>
 //#import <MBProgressHUD/MBProgressHUD.h>

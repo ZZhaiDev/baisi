@@ -51,11 +51,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpTableView];
     
     [self setUpRefresh];
     
 
     
+}
+
+- (NSMutableArray *)datas
+{
+    if (!_datas) {
+        _datas = [[NSMutableArray alloc]init];
+    }
+    return _datas;
+}
+
+- (void)setUpTableView
+{
+    
+    // 设置内边距
+    CGFloat bottom = self.tabBarController.tabBar.height;
+    CGFloat top = ZJTitilesViewY + ZJTitilesViewH;
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    // 设置滚动条的内边距
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+
 }
 
 - (void)setUpRefresh
@@ -76,13 +97,14 @@
 - (void)loadMoreData
 {
         [self.tableView.mj_header endRefreshing];
-    self.page ++;
+
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     params[@"a"] = @"list";
     params[@"c"] = @"data";
     params[@"type"] = @"29";
-    params[@"page"] = @(self.page);
+    NSInteger page = self.page + 1;
+    params[@"page"] = @(page);
     params[@"maxtime"] = self.maxtime;
     
     self.params = params;
@@ -105,11 +127,13 @@
         
         // header 结束刷新，， 刷新提示消失
         [self.tableView.mj_footer endRefreshing ];
+        
+        self.page = page;
         }
         failure:^(NSURLSessionDataTask *task, NSError *error) {
-            
-            // 回复页码 当数据加载失败恢复页码
-            self.page--;
+                        if (self.params != params) return ;
+//            // 回复页码 当数据加载失败恢复页码
+//            self.page--;
                                     [self.tableView.mj_footer endRefreshing ];
                                 }];
     
@@ -134,6 +158,8 @@
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"  parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
         
                 // 如果self.params != 最新params 什么也不做
+        
+        if (self.params != params) return;
         // 存储maxtime 因为maxTIME是从上一次数据得到的
         self.maxtime = responseObject[@"info"][@"maxtime"];
 
@@ -148,7 +174,7 @@
             self.page = 0;
     }
                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-
+                                            if (self.params != params) return ;
                                             [self.tableView.mj_header endRefreshing ];
                                 }];
 
