@@ -8,7 +8,41 @@
 
 #import "ZJFiveTableViewController.h"
 
+#import  <AFNetworking.h>
+#import <UIImageView+WebCache.h>
+
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import "fiveTableModel.h"
+
+
+// 问题； 当网络请求失败， 加的page页码要减回去；
+// 记得要保存maxTime因为每次加载更多数据多要求上一次的maxtime。。
+
+// 先下拉刷新, 再上拉刷新第5页数据
+        // 下拉刷新成功回来: 只有一页数据, page == 0
+        // 上啦刷新成功回来: 最前面那页 + 第5页数据
+// 所以要做的是保留请求，， 每次都已最后一次请求为准。 保留params
+
+//每次上啦和下拉刷新之前都要结束 对应的下拉和上啦刷新
+
+
+
+
+
 @interface ZJFiveTableViewController ()
+
+@property (nonatomic, strong) NSMutableArray *datas;
+
+/** 当前页码 */
+@property (nonatomic, assign) NSInteger page;
+/** 当加载下一页数据时需要这个参数 */
+@property (nonatomic, copy) NSString *maxtime;
+/** 上一次的请求参数 */
+@property (nonatomic, strong) NSDictionary *params;
+
+
+
 
 @end
 
@@ -17,12 +51,110 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setUpRefresh];
+    
+
+    
 }
+
+- (void)setUpRefresh
+{
+    // 一下啦就刷新。。。。
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 自动调节透明度在header里
+    
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    
+    // 一进来就进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+    
+    // 加载更多的数据
+    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+- (void)loadMoreData
+{
+        [self.tableView.mj_header endRefreshing];
+    self.page ++;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    params[@"page"] = @(self.page);
+    params[@"maxtime"] = self.maxtime;
+    
+    self.params = params;
+    
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"  parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        // 如果self.params != 最新params 什么也不做
+        if (self.params != params) return ;
+        
+        // 存储maxtime 因为maxTIME是从上一次数据得到的
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        
+        
+        // 在loadmore里边 往datas里边加数据 而在loadnew里边是覆盖以前的数据
+        NSArray *temp = [fiveTableModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.datas addObjectsFromArray:temp];
+        
+        
+        [self.tableView reloadData];
+        
+        // header 结束刷新，， 刷新提示消失
+        [self.tableView.mj_footer endRefreshing ];
+        }
+        failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+            // 回复页码 当数据加载失败恢复页码
+            self.page--;
+                                    [self.tableView.mj_footer endRefreshing ];
+                                }];
+    
+
+    
+}
+
+
+
+
+- (void)loadNewData
+{
+    [self.tableView.mj_footer endRefreshing];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    
+        self.params = params;
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"  parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+                // 如果self.params != 最新params 什么也不做
+        // 存储maxtime 因为maxTIME是从上一次数据得到的
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+
+                // 在loadmore里边 往datas里边加数据 而在loadnew里边是覆盖以前的数据
+        self.datas = [fiveTableModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        [self.tableView reloadData];
+        
+        // header 结束刷新，， 刷新提示消失
+        [self.tableView.mj_header endRefreshing ];
+        
+        //加载成功了，页码才清为0， 如果加载失败页码不变
+            self.page = 0;
+    }
+                                failure:^(NSURLSessionDataTask *task, NSError *error) {
+
+                                            [self.tableView.mj_header endRefreshing ];
+                                }];
+
+}
+
+
 
 
 
@@ -31,7 +163,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 50;
+    return self.datas.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -42,9 +174,14 @@
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        cell.backgroundColor = [UIColor redColor];
+
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"----%ld行row",(long)indexPath.row];
+    
+    fiveTableModel *topic = self.datas[indexPath.row];
+    cell.textLabel.text = topic.name;
+    cell.detailTextLabel.text = topic.text;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+
 
     return cell;
 }
