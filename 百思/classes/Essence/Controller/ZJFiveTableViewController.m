@@ -50,6 +50,16 @@
 
 static NSString * const IDcell = @"topic";
 
+
+- (NSMutableArray *)datas
+{
+    if (!_datas) {
+        _datas = [[NSMutableArray alloc]init];
+    }
+    return _datas;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -61,23 +71,19 @@ static NSString * const IDcell = @"topic";
     
 }
 
-- (NSMutableArray *)datas
-{
-    if (!_datas) {
-        _datas = [[NSMutableArray alloc]init];
-    }
-    return _datas;
-}
-
 - (void)setUpTableView
 {
-    self.tableView.backgroundColor = [UIColor lightGrayColor];
+
     // 设置内边距
     CGFloat bottom = self.tabBarController.tabBar.height;
     CGFloat top = ZJTitilesViewY + ZJTitilesViewH;
     self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     // 设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor clearColor];
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZJTopicCell class]) bundle:nil] forCellReuseIdentifier:IDcell];
 }
@@ -105,7 +111,7 @@ static NSString * const IDcell = @"topic";
     
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     NSInteger page = self.page + 1;
     params[@"page"] = @(page);
     params[@"maxtime"] = self.maxtime;
@@ -155,7 +161,7 @@ static NSString * const IDcell = @"topic";
     
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     
         self.params = params;
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php"  parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {

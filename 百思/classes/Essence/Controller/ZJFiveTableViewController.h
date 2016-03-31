@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+typedef enum {
+    
+
+        ZJTopicTypeAll = 1,
+        ZJTopicTypePicture = 10,
+        ZJTopicTypeWord = 29,
+        ZJTopicTypeVoice = 31,
+        ZJTopicTypeVideo = 41
+
+
+    
+}ZJTopicType;
+
 @interface ZJFiveTableViewController : UITableViewController
+
+
+/** 帖子类型(交给子类去实现) */
+@property (nonatomic, assign) ZJTopicType type;
+
 
 @end

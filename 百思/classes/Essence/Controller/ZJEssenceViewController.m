@@ -9,6 +9,7 @@
 #import "ZZJRecommandTableViewController.h"
 #import "ZJEssenceViewController.h"
 #import "ZJFiveTableViewController.h"
+#import "ZJFiveTableViewController.h"
 
 @interface ZJEssenceViewController () <UIScrollViewDelegate>
 
@@ -47,22 +48,27 @@
     
     ZJFiveTableViewController *word = [[ZJFiveTableViewController alloc]init];
     word.title = @"段子";
+    word.type = ZJTopicTypeWord;
     [self addChildViewController:word];
     
     ZJFiveTableViewController *all = [[ZJFiveTableViewController alloc]init];
     all.title = @"全部";
+    all.type = ZJTopicTypeAll;
     [self addChildViewController:all];
     
     ZJFiveTableViewController *voice = [[ZJFiveTableViewController alloc]init];
     voice.title = @"声音";
+    voice.type = ZJTopicTypeVoice;
     [self addChildViewController:voice];
     
     ZJFiveTableViewController *media = [[ZJFiveTableViewController alloc]init];
     media.title = @"视频";
+    media.type = ZJTopicTypeVideo;
     [self addChildViewController:media];
     
     ZJFiveTableViewController *image = [[ZJFiveTableViewController alloc]init];
     image.title = @"图片";
+    image.type = ZJTopicTypePicture;
     [self addChildViewController:image];
     
 }
@@ -79,9 +85,9 @@
     contentView.pagingEnabled = YES;
     [self.view insertSubview:contentView atIndex:0];
     CGFloat width = contentView.width * self.childViewControllers.count;
-    CGFloat height = contentView.height;
+
     
-    contentView.contentSize = CGSizeMake(width, height);
+    contentView.contentSize = CGSizeMake(width, 0);
     self.contentView = contentView;
     
     // 添加第一个控制器的view
@@ -123,7 +129,7 @@
     
     
     // 内部的子标签
-   NSArray *titles = @[@"段子", @"全部", @"视频", @"声音", @"图片"];
+
     NSInteger num = self.childViewControllers.count;
     
     for (NSInteger i = 0; i < num; i++) {
@@ -132,8 +138,9 @@
         button.width = titleView.width/num;
         button.x = i *button.width;
         button.tag = i;
-        
-        [button setTitle:titles[i] forState:UIControlStateNormal];
+        UIViewController *vc = [[UIViewController alloc]init];
+        vc = self.childViewControllers[i];
+        [button setTitle:vc.title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         [button.titleLabel setFont:[UIFont systemFontOfSize:13]];
