@@ -10,7 +10,7 @@
 
 #import  <AFNetworking.h>
 #import <UIImageView+WebCache.h>
-
+#import "ZJTopicCell.h"
 #import <MJExtension.h>
 #import <MJRefresh.h>
 #import "fiveTableModel.h"
@@ -48,6 +48,8 @@
 
 @implementation ZJFiveTableViewController
 
+static NSString * const IDcell = @"topic";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -69,14 +71,15 @@
 
 - (void)setUpTableView
 {
-    
+    self.tableView.backgroundColor = [UIColor lightGrayColor];
     // 设置内边距
     CGFloat bottom = self.tabBarController.tabBar.height;
     CGFloat top = ZJTitilesViewY + ZJTitilesViewH;
     self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     // 设置滚动条的内边距
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
-
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZJTopicCell class]) bundle:nil] forCellReuseIdentifier:IDcell];
 }
 
 - (void)setUpRefresh
@@ -189,27 +192,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+    self.tableView.mj_footer.hidden = (self.datas.count == 0);
     return self.datas.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
 
-    }
     
-    fiveTableModel *topic = self.datas[indexPath.row];
-    cell.textLabel.text = topic.name;
-    cell.detailTextLabel.text = topic.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
-
+    ZJTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:IDcell];
+    
+    cell.datas = self.datas[indexPath.row];
 
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 250;
 }
 
 

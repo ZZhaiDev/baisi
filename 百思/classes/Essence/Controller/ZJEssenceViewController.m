@@ -203,7 +203,7 @@
 
     
     // create subController and get the tableViewController
-    UITableViewController *vc = [[UITableViewController alloc]init];
+    UIViewController *vc = [[UIViewController alloc]init];
     vc = self.childViewControllers[index];
     
     //size and point for tableViewController
@@ -211,13 +211,7 @@
     vc.view.y = 0;    // the default y for controller is 20
     vc.view.height = scrollView.height;
     
-    // 设置内边距
-    CGFloat bottom = self.tabBarController.tabBar.height;
-    CGFloat top = CGRectGetMaxY(self.titleView.frame);
-    vc.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     
-    // 设置滚动条的内边距
-    vc.tableView.scrollIndicatorInsets = vc.tableView.contentInset;
     
     // add all the uitable into scrollView
     [scrollView addSubview:vc.view];
