@@ -28,7 +28,7 @@
 /** 评论的数量 */
 @property (nonatomic, assign) NSInteger comment;
 
-@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign, readonly) CGFloat height;
 
 
 @end

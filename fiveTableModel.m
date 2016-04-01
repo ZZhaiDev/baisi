@@ -9,6 +9,9 @@
 #import "fiveTableModel.h"
 
 @implementation fiveTableModel
+{
+    CGFloat _height;
+}
 
 
 
