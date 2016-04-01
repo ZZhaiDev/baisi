@@ -217,13 +217,8 @@ static NSString * const IDcell = @"topic";
 {
     fiveTableModel *data = self.datas[indexPath.row];
     
-    CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * ZJTopicCellMargin, MAXFLOAT);
     
-    CGFloat textH = [data.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil].size.height;
-    
-    CGFloat cellH = ZJTopicCellTextY + textH +ZJTopicCellBottomBarH + 2*ZJTopicCellMargin;
-    
-    return cellH;
+    return data.height;
 //    return 250;
 }
 
