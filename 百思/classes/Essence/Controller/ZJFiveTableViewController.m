@@ -100,7 +100,7 @@ static NSString * const IDcell = @"topic";
     [self.tableView.mj_header beginRefreshing];
     
     // 加载更多的数据
-    self.tableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
 }
 
 - (void)loadMoreData
@@ -215,7 +215,16 @@ static NSString * const IDcell = @"topic";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 250;
+    fiveTableModel *data = self.datas[indexPath.row];
+    
+    CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 4 * ZJTopicCellMargin, MAXFLOAT);
+    
+    CGFloat textH = [data.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil].size.height;
+    
+    CGFloat cellH = ZJTopicCellTextY + textH +ZJTopicCellBottomBarH + 2*ZJTopicCellMargin;
+    
+    return cellH;
+//    return 250;
 }
 
 

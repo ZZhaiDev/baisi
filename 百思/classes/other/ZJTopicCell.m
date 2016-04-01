@@ -28,6 +28,7 @@
 /** 评论 */
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *textLabels;
 
 @end
 
@@ -57,6 +58,7 @@
     [self setupButtonTitle:self.caiButton count:datas.cai placeholder:@"踩"];
     [self setupButtonTitle:self.shareButton count:datas.repost placeholder:@"分享"];
     [self setupButtonTitle:self.commentButton count:datas.comment placeholder:@"评论"];
+    self.textLabels.text = datas.text;
     
 }
 - (void)setupButtonTitle:(UIButton *)button count:(NSInteger)count placeholder:(NSString *)placeholder
@@ -83,12 +85,11 @@
 
 - (void)setFrame:(CGRect)frame
 {
-    static CGFloat margin = 10;
-    NSLog(@"sdfg");
-    frame.origin.x = margin;
-    frame.size.width -= 2 * margin;
-    frame.size.height -= margin;
-    frame.origin.y += margin;
+   
+    frame.origin.x = ZJTopicCellMargin;
+    frame.size.width -= 2 * ZJTopicCellMargin;
+    frame.size.height -= ZJTopicCellMargin;
+    frame.origin.y += ZJTopicCellMargin;
     
     [super setFrame:frame];
 
