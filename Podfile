@@ -1,5 +1,6 @@
-pod 'AFNetworking', '~> 2.1.0'
+
 pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'MJExtension'
 pod 'MJRefresh'
+pod 'AFNetworking', '~> 2.1.0'
